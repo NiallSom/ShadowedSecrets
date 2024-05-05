@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/E.png</file>
+        <file>images/hide.png</file>
+        <file>images/hit.png</file>
+        <file>images/interrogate.png</file>
+        <file>images/investigate.png</file>
+        <file>images/MiniZorkLogo.png</file>
+        <file>images/N.png</file>
+        <file>images/open.png</file>
+        <file>images/pickup.png</file>
+        <file>images/play-button.png</file>
+        <file>images/S.png</file>
+        <file>images/W.png</file>
+        <file>zorkin-it.json</file>
+    </qresource>
+</RCC>

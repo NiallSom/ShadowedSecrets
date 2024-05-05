@@ -1,0 +1,281 @@
+{
+  "main_story": [
+    {
+      "id": 0,
+      "text": "You're standing on the path south of the white house, the door is covered in crime scene tape.",
+      "choices": [
+        {
+          "button": "North",
+          "text": "Go North through the crime scene tape and enter the white house.",
+          "leads_to": 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "You're standing in a room with a large reception, empty of course, there is an open door to your east that leads to a cellar and a bloodstain on the reception desk.",
+      "choices": [
+        {
+          "button": "East",
+          "text": "Go east down the cellar.",
+          "leads_to": 2
+        },
+        {
+          "button": "South",
+          "text": "Go south back outside.",
+          "leads_to": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "In the cellar you notice a piece of paper on the large rotten barrel.",
+      "choices": [
+        {
+          "button": "Open",
+          "text": "Open the piece of paper.",
+          "leads_to": 3
+        },
+        {
+          "button": "Hit",
+          "text": "Hit(tear up) the paper and quit.",
+          "leads_to": 20
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Welcome to SHADOWED SECRETS, this is a game of danger, adventure and most importantly mystery. In this game you will explore the white house and more!",
+      "choices": [
+        {
+          "button":"North",
+          "text":"Go North to continue",
+          "leads_to": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "As your gaze meanders away from the piece of paper you inspect the barrel, it seems to be stuck to the floor.",
+      "choices": [
+        {
+          "button": "Hit",
+          "text": "Hit the barrel.",
+          "leads_to": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "As you hit the barrel it breaks a hole in the top you look in and it reveals a dark hatch that leads into a deep mineshaft.",
+      "choices": [
+        {
+          "button": "North",
+          "text": "Go north into the mineshaft.",
+          "leads_to": 6
+        },
+        {
+          "button": "East",
+          "text": "Go east to go back up to reception.",
+          "leads_to": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "There is two tunnels one to the east and one to the west, the tunnel to the east is badly lit, you shouldn't go down there yet! The tunnel to the west is dimly lit with small LED's.",
+      "choices": [
+        {
+          "button": "East",
+          "text": "Go east without a light.",
+          "leads_to": 20
+        },
+        {
+          "button": "West",
+          "text": "Go west.",
+          "leads_to": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "There is blood on the floor.",
+      "choices": [
+        {
+          "button": "Investigate",
+          "text": "Investigate blood.",
+          "leads_to": 8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "The blood is type O-, the president is blood type O+, who's blood is this?",
+      "choices": [
+        {
+          "button": "Investigate",
+          "text": "Investigate every employee in the white house and test their blood.",
+          "leads_to": 9
+        }
+]
+    },
+    {
+      "id": 9,
+      "text": "The receptionist is the only person with O- blood type.",
+      "choices": [
+        {
+          "button": "Interrogate",
+          "text": "Interrogate the receptionist for questions.",
+          "leads_to": 10
+        },
+        {
+          "button": "North",
+          "text": "Continue north walking down the west tunnel.",
+          "leads_to": 11
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "She refuses to answer any questions, but she has massive scratch marks on her arm. Something doesn't add up...",
+      "choices": [
+        {
+          "button": "Interrogate",
+          "text": "Interrogate further.",
+          "leads_to": 12
+        },
+        {
+          "button": "North",
+          "text": "Continue north walking down the west tunnel.",
+          "leads_to": 11
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "There is a little locker at the end of the tunnel, there is a lock on it.",
+      "choices": [
+        {
+          "button": "Investigate",
+          "text": "Investigate the cellar you came from.",
+          "leads_to": 13
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "She cracks and tells you where a key to a locker is, there is not enough evidence to convict her... yet ...",
+      "choices": [
+        {
+          "button": "South",
+          "text": "Go South to the location and pickup the key.",
+          "leads_to": 13
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "You find the key.",
+      "choices": [
+        {
+          "button": "Open",
+          "text": "Open the locker in the west tunnel.",
+          "leads_to": 14
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "You find a torch and a key.",
+      "choices": [
+        {
+          "button": "East",
+          "text": "Go east to the east tunnel.",
+          "leads_to": 15
+        },
+        {
+          "button": "North",
+          "text": "You get tired and give up go north.",
+          "leads_to": 20
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "You find a heavy door blocking a well ventilated room.",
+      "choices": [
+        {
+          "button": "Open",
+          "text": "Open the door with the new key.",
+          "leads_to": 16
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "You find the receptionists boyfriend holding a shotgun, he is facing away listening to music however he notices a flicker of light before you turn the light off.",
+      "choices": [
+        {
+          "button": "Hide",
+          "text": "Hide from the receptionists boyfriend.",
+          "leads_to": 17
+        },
+        {
+          "button": "South",
+          "text": "Go South and leave.",
+          "leads_to": 15
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "text": "The boyfriend finds nothing and walks down the tunnel, you wish you brought your gun.",
+      "choices": [
+        {
+          "button": "Pickup",
+          "text": "You see the president passed out. Pick him up and take him to the police station.",
+          "leads_to": 19
+        },
+        {
+          "button": "Interrogate",
+          "text": "Follow the boyfriend and interrogate him for answers.",
+          "leads_to": 18
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "text": "You take the boyfriend down and pin him down, he tells you where the president is, you take him and the president to the police station.",
+      "choices": [
+        {
+          "button": "Investigate",
+          "text": "Investigate the receptionist to take her to jail.",
+          "leads_to": 19
+        },
+        {
+          "button": "North",
+          "text": "Go North back home.",
+          "leads_to": 20
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "text": "the rest of Shadowed Secrets is coming soon!! Thank you for playing.",
+      "choices": [{
+              "button": "South",
+              "text": "Go south and play again.",
+              "leads_to": 0
+      }]
+    },
+    {
+      "id": 20,
+      "text": "GAME OVER.YOU DIED. Thank you for playing Shadowed Secrets.",
+      "choices": [{
+              "button": "South",
+              "text": "Go south and play again.",
+              "leads_to": 0
+      }]
+    }
+  ]
+}
