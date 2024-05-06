@@ -1,8 +1,8 @@
 #include "item.h"
 
 
-item::item(uint8_t w, uint8_t d) : weight(w), damage(d){}
+item::item(std::string n, double w, int d) :name(n), weight(w), damage(d){}
 
-void item::use(item item,  Entity entity) {
+void item::use() {
 
 }

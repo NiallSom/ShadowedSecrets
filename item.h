@@ -1,15 +1,16 @@
 #ifndef ITEM_H
 #define ITEM_H
-#include <stdint.h>
-#include "entity.h"
+#include <string>
+
 class item
 {
-private:
-    uint8_t weight;
-    uint8_t damage;
+protected:
+    std::string name;
+    double weight;
+    int damage;
 public:
-    item(uint8_t w, uint8_t d);
-    void use(item item, Entity entity);
+    item(std::string name, double w, int d);
+    virtual void use();
 };
 
 #endif // ITEM_H

@@ -36,9 +36,6 @@ public:
     QLabel *Title_img;
     QSpacerItem *horizontalSpacer_6;
     QHBoxLayout *horizontalLayout_5;
-    QSpacerItem *horizontalSpacer_13;
-    QHBoxLayout *horizontalLayout_10;
-    QGridLayout *gridLayout;
     QSpacerItem *horizontalSpacer_3;
     QPlainTextEdit *plainTextEdit;
     QSpacerItem *horizontalSpacer_4;
@@ -115,20 +112,6 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName("horizontalLayout_5");
-        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_13);
-
-        horizontalLayout_10 = new QHBoxLayout();
-        horizontalLayout_10->setObjectName("horizontalLayout_10");
-
-        horizontalLayout_5->addLayout(horizontalLayout_10);
-
-        gridLayout = new QGridLayout();
-        gridLayout->setObjectName("gridLayout");
-
-        horizontalLayout_5->addLayout(gridLayout);
-
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_5->addItem(horizontalSpacer_3);

@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     entity.cpp \
+    gun.cpp \
     item.cpp \
     loader.cpp \
     main.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     entity.h \
+    gun.h \
     item.h \
     loader.h \
     mainwindow.h \

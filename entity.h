@@ -1,24 +1,26 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 #include <string>
-#include <stdint.h>
-//#include "room.h"
-
-enum EntitiesDmg {
-    PLAYER = 25,
-    THE_BF = 100,
-    GOBLIN = 50,
-    SLIME = 15
-};
-
+#include "item.h"
+#include <vector>
 using namespace std;
 class Entity
 {
 private:
-    uint8_t damage; // to ensure damage stays the same for each OS
     string entityType;
+    int health = 100;
+    std::vector<item> inventory;
+    int inventorySize = 3;
+
 public:
-    Entity(string entityType, uint8_t damage);
+    Entity(string entityType);
+    void setHealth(int damage);
+    int getHealth();
+    void addItem(item itm){
+        if (this->inventory.size() < 3) {
+            this->inventory.push_back(itm);
+        }
+    }
 };
 
 #endif // ENTITY_H

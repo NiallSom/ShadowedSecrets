@@ -33,8 +33,8 @@ std::vector<Room*> loader::loadRooms() {
         delete E;
         delete S;
         delete W;
+        delete tempRoom;
     }
-
     return rooms; // return the vector of rooms
 }
 
