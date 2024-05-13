@@ -10,6 +10,9 @@ void Room::setExits(int N,int E, int S,int W) {
     this->exits["South"] = S;
     this->exits["West"] = W;
 }
+void Room::setAction(std::string action, int leadsTo){
+    this->exits[action] = leadsTo;
+}
 int Room::getID() {
     return this->roomID;
 }
@@ -24,4 +27,10 @@ void Room::addEnemy(Entity* entity){
 }
 void Room::addItem(item* item) {
     this->items.push_back(item);
+}
+std::string Room::getDescription(){
+    return this->description;
+}
+void Room::setDescription(std::string desc){
+    this->description = desc;
 }

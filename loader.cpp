@@ -18,27 +18,20 @@ struct itemStruct{
 std::vector<Room*> loader::loadRooms() {
     std::vector<Room*> rooms;
     for (int i = 0; i < this->document["rooms"].Size(); i++) {
-        int N;
-        int E;
-        int S;
-        int W;
         Room* tempRoom = new Room(i);
         std::string description = this->document["rooms"][i]["description"].GetString();
+        tempRoom->setDescription(description);
         for (int x = 0; x < this->document["rooms"][i]["leads_to"].Size(); x++) {
             std::string button = this->document["rooms"][i]["leads_to"][x]["button"].GetString();
             int leads_to = this->document["rooms"][i]["leads_to"][x]["leads_to"].GetInt();
-
-            if (button == "North") N = leads_to;
-            if (button == "East") E = leads_to;
-            if (button == "South") S = leads_to;
-            if (button == "West") W = leads_to;
+            tempRoom->setAction(button,leads_to);
+            qDebug() << button << " " << leads_to;
             if (document["rooms"][i].HasMember("items")){
                 for (int j = 0; j<document["rooms"][i]["items"].Size();j++){
                     itemStruct tempItem(document["rooms"][i]["items"][j]["name"].GetString(),
                                     document["rooms"][i]["items"][j]["weight"].GetInt(),
                                     document["rooms"][i]["items"][j]["damage"].GetInt());
                     tempRoom->addItem(new item(tempItem.name,tempItem.weight,tempItem.damage));
-
                 }
             }
             if (document["rooms"][i].HasMember("enemy")){
@@ -46,7 +39,6 @@ std::vector<Room*> loader::loadRooms() {
                 tempRoom->addEnemy(entity);
             }
         }
-        tempRoom->setExits(N, E, S, W); // set exits after all exits are defined
         rooms.push_back(tempRoom);
     }
     return rooms; // return the vector of rooms

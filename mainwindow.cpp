@@ -7,6 +7,7 @@
 std::vector<Room*> rooms;
 Player player("Player");
 loader ldr("C:/Users/Niall/Desktop/C++/ShadowedSecretsBLTD/zorkin-it.json");
+std::vector<std::string> btns = ldr.getButtons(player.getRoomID());
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -54,23 +55,21 @@ MainWindow::MainWindow(QWidget *parent)
 
     rooms = ldr.loadRooms();
 
-
-
-    std::vector<std::string> btns = ldr.getButtons(player.getRoomID());
-
-    Entity *en = new Entity("niall");
-    qDebug() << en->getHealth();
+    qDebug() << rooms[2]->getExit("Hit");
+    insertDesc();
     player.addItem(new item("Gun",1,2)); // error is to do with gun it works with item just not gun
     player.addItem(new item("Flashlight",1,2));
-    setButtonStates(btns);
+    setButtonStates();
 }
 void MainWindow::insertDesc() {
-
+    qDebug() << rooms[player.getRoomID()]->getDescription();
+    ui->plainTextEdit->appendPlainText("\n" + QString::fromStdString(rooms[player.getRoomID()]->getDescription()));
 }
-void MainWindow::setButtonStates(std::vector<std::string> availableBtns) {
+void MainWindow::setButtonStates() {
+    btns = ldr.getButtons(player.getRoomID());
     QList<QPushButton *> butts = this->findChildren<QPushButton *>();
     for (QPushButton *button : butts){
-        if( (std::find(availableBtns.begin(),availableBtns.end(),button->objectName().toStdString())) != availableBtns.end() ) {
+        if((std::find(btns.begin(),btns.end(),button->objectName().toStdString())) != btns.end() ) {
             button->setEnabled(true);
         }else{
             button->setEnabled(false);
@@ -99,9 +98,12 @@ void MainWindow::buttonSetup(QPushButton *button, QPixmap map) {
 }
 void MainWindow::handleButton() {
     QString senderButton = qobject_cast<QPushButton*>(sender())->objectName();
-    player.setRoomID(2);
-    std::vector<std::string> btns = ldr.getButtons(player.getRoomID());
-    setButtonStates(btns);
+    if((std::find(btns.begin(),btns.end(),senderButton.toStdString())) != btns.end() ){
+        player.setRoomID(rooms[player.getRoomID()]->getExit(senderButton.toStdString()));
+    }
+    setButtonStates();
+    insertDesc();
+
 }
 
 MainWindow::~MainWindow()

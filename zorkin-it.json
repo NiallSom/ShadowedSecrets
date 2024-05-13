@@ -166,7 +166,7 @@
         "description": "You find the key.",
         "leads_to": [
             {
-                "button": "pickup",
+                "button": "Pickup",
                 "leads_to": 14
             }
         ]

@@ -25,7 +25,7 @@ private:
 private slots:
 void buttonSetup(QPushButton *button, QPixmap map);
 void handleButton();
-void setButtonStates(std::vector<std::string> availableBtns);
+void setButtonStates();
 void insertDesc();
 };
 

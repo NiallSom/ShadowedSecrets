@@ -22,6 +22,9 @@ public:
     void addItem(item* item);
     int getID();
     int getExit(string);
+    std::string getDescription();
+    void setDescription(std::string desc);
+    void setAction(std::string action, int leadsTo);
 };
 
 #endif // ROOM_H
