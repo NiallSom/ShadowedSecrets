@@ -10,19 +10,20 @@ CONFIG += c++17
 
 SOURCES += \
     entity.cpp \
-    gun.cpp \
     item.cpp \
     loader.cpp \
     main.cpp \
     mainwindow.cpp \
+    player.cpp \
     room.cpp
 
 HEADERS += \
     entity.h \
-    gun.h \
+    exitnotfoundexception.h \
     item.h \
     loader.h \
     mainwindow.h \
+    player.h \
     room.h
 
 FORMS += \

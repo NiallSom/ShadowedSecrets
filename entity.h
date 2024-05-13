@@ -9,18 +9,16 @@ class Entity
 private:
     string entityType;
     int health = 100;
-    std::vector<item> inventory;
+    std::vector<item*> inventory;
     int inventorySize = 3;
 
 public:
     Entity(string entityType);
     void setHealth(int damage);
     int getHealth();
-    void addItem(item itm){
-        if (this->inventory.size() < 3) {
-            this->inventory.push_back(itm);
-        }
-    }
+    std::vector<std::string> getInventory();
+    void addItem(item* itm);
+    void attack(item* itm,Entity *entity);
 };
 
 #endif // ENTITY_H

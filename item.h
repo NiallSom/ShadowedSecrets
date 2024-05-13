@@ -2,6 +2,7 @@
 #define ITEM_H
 #include <string>
 
+class Entity;
 class item
 {
 protected:
@@ -9,8 +10,11 @@ protected:
     double weight;
     int damage;
 public:
+    ~item() {}
     item(std::string name, double w, int d);
-    virtual void use();
+    std::string getName();
+    void use();
+    void use(Entity* entity);
 };
 
 #endif // ITEM_H

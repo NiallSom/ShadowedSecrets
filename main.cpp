@@ -6,8 +6,13 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.setFixedSize(1000,600);
+    w.setFixedSize(1000,650);
     w.show();
-    w.setStyleSheet("background-color: #e4e2dd;");
+
+    w.setStyleSheet("background-color: #e4e2dd; ");
+    QHBoxLayout *layout = w.findChild<QHBoxLayout*>("YourHBoxLayoutObjectName");
+
+    // Set the image using CSS
+
     return a.exec();
 }

@@ -13,6 +13,7 @@ public:
 
     std::vector<Room*>loadRooms();
     std::string getText(int id);
+    std::vector<std::string> getButtons(int roomID);
 };
 
 #endif // LOADER_H

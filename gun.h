@@ -5,10 +5,9 @@
 #include "entity.h"
 class gun : public item {
 public:
-
     using item::use;
     gun(std::string name, double weight,int damage);
-    void use(Entity entity);
+    void use(Entity& entity);
 };
 
 #endif // GUN_H

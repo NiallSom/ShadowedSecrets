@@ -13,5 +13,8 @@
         <file>images/S.png</file>
         <file>images/W.png</file>
         <file>zorkin-it.json</file>
+        <file>images/flashlight.png</file>
+        <file>images/gun.png</file>
+        <file>images/key.png</file>
     </qresource>
 </RCC>
