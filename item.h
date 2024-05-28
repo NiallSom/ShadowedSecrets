@@ -2,17 +2,18 @@
 #define ITEM_H
 #include <string>
 
+using namespace std;
 class Entity;
 class item
 {
 protected:
-    std::string name;
+    string name;
     double weight;
     int damage;
 public:
     ~item() {}
-    item(std::string name, double w, int d);
-    std::string getName();
+    item(string name, double w, int d);
+    string getName();
     void use();
     void use(Entity* entity);
 };

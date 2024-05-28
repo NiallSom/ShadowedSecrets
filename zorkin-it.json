@@ -2,7 +2,7 @@
   "rooms": [
     {
         "id": 0,
-        "description": "You're standing on the path south of the white house, the door is covered in crime scene tape.",
+        "description": "You're standing on the path south of the white house, the door is covered in crime scene tape. Go North to enter",
         "leads_to": [
             {
                 "button": "North",
@@ -12,7 +12,8 @@
     },
     {
         "id": 1,
-        "description": "You're standing in a room with a large reception, empty of course, there is an open door to your east that leads to a cellar and a bloodstain on the reception desk.",
+        "description": "You're standing in a room with a large reception, empty of course, there is an open door to your east that leads to a cellar and a bloodstain on the reception desk. South to go back outside",
+
         "leads_to": [
             {
                 "button": "East",
@@ -26,14 +27,7 @@
     },
     {
         "id": 2,
-        "description": "In the cellar you notice a piece of paper on the large rotten barrel.",
-        "items":[
-            {
-                "name":"gun",
-                "weight":5,
-                "damage":100
-            }
-        ],
+        "description": "In the cellar you notice a piece of paper on the large rotten barrel. Pickup the gun, or hit(tear) up the paper and quit",
         "leads_to": [
             {
                 "button": "Pickup",
@@ -47,7 +41,14 @@
     },
     {
         "id": 3,
-        "description": "Welcome to SHADOWED SECRETS, this is a game of danger, adventure and most importantly mystery. In this game you will explore the white house and more!",
+        "description": "Welcome to SHADOWED SECRETS, this is a game of danger, adventure and most importantly mystery. In this game you will explore the white house and more! Go North to continue",
+        "items":[
+            {
+                "name":"Gun",
+                "weight":5,
+                "damage":100
+            }
+        ],
         "leads_to": [
             {
                 "button": "North",
@@ -57,7 +58,7 @@
     },
     {
         "id": 4,
-        "description": "As your gaze meanders away from the piece of paper you inspect the barrel, it seems to be stuck to the floor.",
+        "description": "As your gaze meanders away from the piece of paper you inspect the barrel, it seems to be stuck to the floor. Break(Hit) the barrel open",
         "leads_to": [
             {
                 "button": "Hit",
@@ -67,7 +68,7 @@
     },
     {
         "id": 5,
-        "description": "As you hit the barrel it breaks a hole in the top you look in and it reveals a dark hatch that leads into a deep mineshaft.",
+        "description": "As you hit the barrel it breaks a hole in the top you look in and it reveals a dark hatch that leads into a deep mineshaft. North to go down the mineshaft, East to go back outside",
         "leads_to": [
             {
                 "button": "North",
@@ -163,7 +164,7 @@
     },
     {
         "id": 13,
-        "description": "You find the key.",
+        "description": "You find two keys.",
         "leads_to": [
             {
                 "button": "Pickup",
@@ -173,7 +174,17 @@
     },
     {
         "id": 14,
-        "description": "You now have the key.",
+        "description": "You now have the key. Open the cabinet at the end of the hall!",
+        "items":[{
+                "name":"key1",
+                "weight":1,
+                "damage":0
+        },
+        {
+                        "name":"key2",
+                        "weight":1,
+                        "damage":0
+                }],
         "leads_to": [
             {
                 "button": "Open",
@@ -183,18 +194,14 @@
     },
     {
         "id": 15,
-        "description": "You find a torch and a key.",
+        "description": "You find a torch. Go East to the next door or give up and go North!",
         "items":[
             {
-                "name":"torch",
+                "name":"Flashlight",
                 "weight":5,
                 "damage":1
-            },
-            {
-                "name":"key",
-                "weight":1,
-                "damage":0
-        }],
+            }
+            ],
         "leads_to": [
             {
                 "button": "East",
@@ -208,7 +215,8 @@
     },
     {
         "id": 16,
-        "description": "You find a heavy door blocking a well ventilated room.",
+        "description": "You find a heavy door blocking a well ventilated room. Open it with your key!",
+
         "leads_to": [
             {
                 "button": "Open",
@@ -237,7 +245,7 @@
     },
     {
         "id": 18,
-        "description": "The boyfriend finds nothing and walks down the tunnel, you wish you brought your gun.",
+        "description": "The boyfriend finds nothing and walks down the tunnel, you wish you brought your gun. Pickup the president and take him to the station or go after the boyfriend",
         "leads_to": [
             {
                 "button": "Pickup",
@@ -251,7 +259,7 @@
     },
     {
         "id": 19,
-        "description": "You take the boyfriend down and pin him down, he tells you where the president is, you take him and the president to the police station.",
+        "description": "You take the boyfriend down and pin him down, he tells you where the president is, you take him and the president to the police station. Go North home and retire or investigate the receptionist",
         "leads_to": [
             {
                 "button": "Investigate",

@@ -10,9 +10,5 @@ int main(int argc, char *argv[])
     w.show();
 
     w.setStyleSheet("background-color: #e4e2dd; ");
-    QHBoxLayout *layout = w.findChild<QHBoxLayout*>("YourHBoxLayoutObjectName");
-
-    // Set the image using CSS
-
     return a.exec();
 }

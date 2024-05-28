@@ -4,6 +4,9 @@
 #include <vector>
 #include "loader.h"
 #include "player.h"
+
+
+
 std::vector<Room*> rooms;
 Player player("Player");
 loader ldr("C:/Users/Niall/Desktop/C++/ShadowedSecretsBLTD/zorkin-it.json");
@@ -54,15 +57,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     rooms = ldr.loadRooms();
-
-    qDebug() << rooms[2]->getExit("Hit");
     insertDesc();
-    player.addItem(new item("Gun",1,2)); // error is to do with gun it works with item just not gun
-    player.addItem(new item("Flashlight",1,2));
     setButtonStates();
 }
 void MainWindow::insertDesc() {
-    qDebug() << rooms[player.getRoomID()]->getDescription();
     ui->plainTextEdit->appendPlainText("\n" + QString::fromStdString(rooms[player.getRoomID()]->getDescription()));
 }
 void MainWindow::setButtonStates() {
@@ -101,9 +99,19 @@ void MainWindow::handleButton() {
     if((std::find(btns.begin(),btns.end(),senderButton.toStdString())) != btns.end() ){
         player.setRoomID(rooms[player.getRoomID()]->getExit(senderButton.toStdString()));
     }
+    // HERE
+
+    std::vector<item *> items = rooms[player.getRoomID()]->getItems();
+    if((items.size()) != 0){
+        for(item *itm:items){
+            player.addItem(itm);
+        }
+    }
+    if (player.getRoomID() == 0) {
+        player.resetInventory();
+    }
     setButtonStates();
     insertDesc();
-
 }
 
 MainWindow::~MainWindow()

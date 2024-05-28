@@ -11,7 +11,7 @@ class Room
 private:
     int roomID;
     Room *room;
-    std::string description;
+    string description;
     map<string,int> exits;
     vector<item*> items;
     vector<Entity*> enemies;
@@ -22,9 +22,10 @@ public:
     void addItem(item* item);
     int getID();
     int getExit(string);
-    std::string getDescription();
-    void setDescription(std::string desc);
-    void setAction(std::string action, int leadsTo);
+    string getDescription();
+    void setDescription(string desc);
+    void setAction(string action, int leadsTo);
+    vector<item*> getItems();
 };
 
 #endif // ROOM_H

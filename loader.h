@@ -4,16 +4,19 @@
 #include "rapidjson/document.h"
 #include <room.h>
 #include <vector>
+
+using namespace std;
+using namespace rapidjson;
 class loader
 {
 private:
-    rapidjson::Document document;
+    Document document;
 public:
     loader(const char *filename);
 
-    std::vector<Room*>loadRooms();
-    std::string getText(int id);
-    std::vector<std::string> getButtons(int roomID);
+    vector<Room*>loadRooms();
+    string getText(int id);
+    vector<string> getButtons(int roomID);
 };
 
 #endif // LOADER_H

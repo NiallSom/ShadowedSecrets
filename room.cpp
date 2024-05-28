@@ -1,6 +1,7 @@
 #include "room.h"
 #include "exitnotfoundexception.h"
 
+using namespace std;
 Room::Room(int ID) : roomID(ID) {}
 
 
@@ -10,13 +11,16 @@ void Room::setExits(int N,int E, int S,int W) {
     this->exits["South"] = S;
     this->exits["West"] = W;
 }
-void Room::setAction(std::string action, int leadsTo){
+void Room::setAction(string action, int leadsTo){
     this->exits[action] = leadsTo;
+}
+vector<item*> Room::getItems() {
+    return this->items;
 }
 int Room::getID() {
     return this->roomID;
 }
-int Room::getExit(std::string exit){
+int Room::getExit(string exit){
     if (exits.find(exit) == exits.end()) {
         throw ExitNotFoundException(exit);
     }
@@ -28,9 +32,9 @@ void Room::addEnemy(Entity* entity){
 void Room::addItem(item* item) {
     this->items.push_back(item);
 }
-std::string Room::getDescription(){
+string Room::getDescription(){
     return this->description;
 }
-void Room::setDescription(std::string desc){
+void Room::setDescription(string desc){
     this->description = desc;
 }
