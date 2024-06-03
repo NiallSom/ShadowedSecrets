@@ -6,11 +6,11 @@
 #include "player.h"
 
 
-
-std::vector<Room<int> *> rooms;
+using namespace std;
+vector<Room<int> *> rooms;
 Player player("Player");
 loader ldr("C:/Users/Niall/Desktop/C++/ShadowedSecretsBLTD/zorkin-it.json");
-std::vector<std::string> btns = ldr.getButtons(player.getRoomID());
+vector<string> btns = ldr.getButtons(player.getRoomID());
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -73,7 +73,7 @@ void MainWindow::setButtonStates() {
             button->setEnabled(false);
         }
     }
-    std::vector<std::string> inventory = player.getInventory();
+    vector<string> inventory = player.getInventory();
     QList<QLabel *> labels = this->findChildren<QLabel *>();
     for (QLabel *label: labels){
         //qDebug() << label->objectName();
@@ -101,7 +101,7 @@ void MainWindow::handleButton() {
     }
     // HERE
 
-    std::vector<item *> items = rooms[player.getRoomID()]->getItems();
+    vector<item *> items = rooms[player.getRoomID()]->getItems();
     if((items.size()) != 0){
         for(item *itm:items){
             player += itm;

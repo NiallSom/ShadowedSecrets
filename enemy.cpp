@@ -10,6 +10,7 @@ void Enemy::resetInventory(){
     this->inventorySize = 0b00;
     this->inventory.clear();
 }
+
 Enemy& Enemy::operator+=(item* itm) {
     if (this->inventorySize != 0b1111) {
         this->inventorySize = static_cast<uint8_t>(this->inventorySize | 1 << sumOf(bitset<4>(this->inventorySize)));
