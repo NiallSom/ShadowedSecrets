@@ -3,26 +3,33 @@
 #include <string>
 #include "item.h"
 #include <vector>
+#include <bitset>
 #include <cstdint>
 using namespace std;
+namespace Ui {
+class MainWindow;
+}
 class Entity
 {
+    friend class Player;
+    friend class Enemy;
 protected:
     string entityType;
     int health = 100;
     vector<item*> inventory;
-    uint8_t inventorySize = 0b0000; //bit structure
+    uint8_t inventorySize = 0b00; //bit structure
 
 public:
     Entity(string entityType);
-    ~Entity() {};
+    virtual ~Entity() {};
     void setHealth(int damage);
-    void resetInventory();
+    int sumOf(bitset<4> x);
+    virtual void resetInventory();
     int getHealth();
     vector<string> getInventory();
-    void addItem(item* itm);
-    void attack(item* itm,Entity *entity);
+    virtual void attack(Ui::MainWindow *ui, item* itm,Entity *entity) = 0;
     bool isFull();
+    string getEntityType();
 };
 
 #endif // ENTITY_H

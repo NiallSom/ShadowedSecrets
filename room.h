@@ -6,21 +6,22 @@
 #include <item.h>
 #include <entity.h>
 using namespace std;
+template <typename T>
 class Room
 {
 private:
-    int roomID;
+    T roomID;
     Room *room;
     string description;
-    map<string,int> exits;
+    map<string,T> exits;
     vector<item*> items;
     vector<Entity*> enemies;
 public:
-    Room(int roomID);
+    Room(T roomID);
     void setExits(int N,int E, int S, int W);
     void addEnemy(Entity* entity);
     void addItem(item* item);
-    int getID();
+    T getID();
     int getExit(string);
     string getDescription();
     void setDescription(string desc);

@@ -9,6 +9,9 @@ public:
     Player(string entityType);
     void setRoomID(int id);
     int getRoomID();
+    void attack(Ui::MainWindow *ui, item* itm,Entity *entity) override;
+    Player& operator+=(item* itm);
+    void resetInventory() override;
 };
 
 #endif // PLAYER_H

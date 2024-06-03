@@ -7,7 +7,7 @@
 
 
 
-std::vector<Room*> rooms;
+std::vector<Room<int> *> rooms;
 Player player("Player");
 loader ldr("C:/Users/Niall/Desktop/C++/ShadowedSecretsBLTD/zorkin-it.json");
 std::vector<std::string> btns = ldr.getButtons(player.getRoomID());
@@ -76,7 +76,7 @@ void MainWindow::setButtonStates() {
     std::vector<std::string> inventory = player.getInventory();
     QList<QLabel *> labels = this->findChildren<QLabel *>();
     for (QLabel *label: labels){
-        qDebug() << label->objectName();
+        //qDebug() << label->objectName();
         if (label->objectName() !="Title_img"){
             if( (std::find(inventory.begin(),inventory.end(),label->objectName().toStdString())) != inventory.end()) {
                 label->setEnabled(true);
@@ -104,9 +104,10 @@ void MainWindow::handleButton() {
     std::vector<item *> items = rooms[player.getRoomID()]->getItems();
     if((items.size()) != 0){
         for(item *itm:items){
-            player.addItem(itm);
+            player += itm;
         }
     }
+    qDebug() << player.getRoomID();
     if (player.getRoomID() == 0) {
         player.resetInventory();
     }

@@ -7,6 +7,7 @@
 
 using namespace std;
 using namespace rapidjson;
+
 class loader
 {
 private:
@@ -14,7 +15,7 @@ private:
 public:
     loader(const char *filename);
 
-    vector<Room*>loadRooms();
+    vector<Room<int>*>loadRooms();
     string getText(int id);
     vector<string> getButtons(int roomID);
 };

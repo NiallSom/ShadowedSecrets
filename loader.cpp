@@ -1,6 +1,7 @@
 #include "loader.h"
 #include "rapidjson/filereadstream.h"
 #include <QDebug>
+#include "enemy.h"
 using namespace rapidjson;
 loader::loader(const char *filename) {
     FILE* fp = fopen(filename, "r");
@@ -17,10 +18,10 @@ struct itemStruct{
     itemStruct(string n, int w, int d) : name(n), weight(w), damage(d) {}
 };
 
-vector<Room*> loader::loadRooms() {
-    vector<Room*> rooms;
+vector<Room<int>*> loader::loadRooms() {
+    vector<Room<int>*> rooms;
     for (int i = 0; i < this->document["rooms"].Size(); i++) {
-        Room* tempRoom = new Room(i);
+        Room<int>* tempRoom = new Room<int>(i);
         string description = this->document["rooms"][i]["description"].GetString();
         tempRoom->setDescription(description);
         for (int x = 0; x < this->document["rooms"][i]["leads_to"].Size(); x++) {
@@ -36,7 +37,7 @@ vector<Room*> loader::loadRooms() {
                 }
             }
             if (document["rooms"][i].HasMember("enemy")){
-                Entity *entity = new Entity(document["rooms"][i]["enemy"]["name"].GetString());
+                Enemy *entity = new Enemy(document["rooms"][i]["enemy"]["name"].GetString());
                 tempRoom->addEnemy(entity);
                 delete entity;
             }
