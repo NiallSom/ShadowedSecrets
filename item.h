@@ -11,6 +11,23 @@ protected:
     double weight;
     int damage;
 public:
+    enum ItemType { KEY, GUN, LIGHT };
+    ItemType type;
+    item(const item& other);
+    union {
+        struct {
+            int keyCode;
+        } key;
+        struct {
+            int damage;
+            int ammo;
+        } gun;
+        struct {
+            int brightness;
+            int batteryLife;
+        } light;
+    };
+
     ~item() {}
     item(string name, double w, int d);
     string getName();

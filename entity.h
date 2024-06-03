@@ -24,6 +24,7 @@ public:
     virtual ~Entity() {};
     void setHealth(int damage);
     int sumOf(bitset<4> x);
+    Entity(const Entity& other); // copy constructor
     virtual void resetInventory();
     int getHealth();
     vector<string> getInventory();

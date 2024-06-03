@@ -31,8 +31,8 @@ vector<Room<int>*> loader::loadRooms() {
             if (document["rooms"][i].HasMember("items")){
                 for (int j = 0; j<document["rooms"][i]["items"].Size();j++){
                     itemStruct tempItem(document["rooms"][i]["items"][j]["name"].GetString(),
-                                    document["rooms"][i]["items"][j]["weight"].GetInt(),
-                                    document["rooms"][i]["items"][j]["damage"].GetInt());
+                                        document["rooms"][i]["items"][j]["weight"].GetInt(),
+                                        document["rooms"][i]["items"][j]["damage"].GetInt());
                     tempRoom->addItem(new item(tempItem.name,tempItem.weight,tempItem.damage));
                 }
             }

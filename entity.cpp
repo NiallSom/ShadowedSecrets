@@ -27,6 +27,7 @@ std::vector<string> Entity::getInventory(){
     std::vector<string> inv;
     for (item* itm: this->inventory){
         inv.push_back(itm->getName());
+
     }
     return inv;
 }
@@ -36,4 +37,14 @@ bool Entity::isFull(){
 
 string Entity::getEntityType() {
     return this->entityType;
+}
+
+Entity::Entity(const Entity& other) {
+    this->entityType = other.entityType;
+    this->health = other.health;
+    // Deep copy inventory
+    for (item* itm : other.inventory) {
+        this->inventory.push_back(new item(*itm));
+    }
+    this->inventorySize = other.inventorySize;
 }
